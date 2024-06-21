@@ -2,7 +2,7 @@
 
 import { GET } from "@/util/api"
 
-export const getProduct = async (endPoint) => {
+export const getBatch = async (endPoint) => {
 
     const response = await GET(endPoint);
 

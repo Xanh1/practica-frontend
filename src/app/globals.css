@@ -6,6 +6,19 @@
   .shadow-right {
     box-shadow: 5px 0 10px -5px rgba(0, 0, 0, 0.1), 2px 0 4px -1px rgba(0, 0, 0, 0.05);
   }
+
+  .bg-blue-aguita {
+    background-color: #2d57ff;
+  }
+
+  .text-blue-aguita {
+    color: #2d57ff;
+  }
+
+  .border-blue-aguita {
+    border-color: #2d57ff;
+  }
+  
 }
 
 body {

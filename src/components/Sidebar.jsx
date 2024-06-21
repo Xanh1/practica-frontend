@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Sidebar() {
     return (
         <aside className="h-full rounded-sm px-2 py-4 w-14 flex flex-col justify-between items-center shadow-right">
-            <Image src="/imgs/user.jpeg" width={24} height={24} />
+            <Link href="/dashboard" >Profile</Link>
                 <ul>
                     <li className="mb-2 hover:scale-110">
                         <Link href="/dashboard/product" title="Products">
@@ -50,7 +50,7 @@ export default function Sidebar() {
                         </Link>
                     </li>
                 </ul>
-                <Link className="hover:scale-110" href="" title="Logout">
+                <Link className="hover:scale-110" href="/" title="Logout">
                     <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                         <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>

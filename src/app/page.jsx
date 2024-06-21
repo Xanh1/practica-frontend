@@ -12,6 +12,9 @@ import { Toaster, toast } from "sonner";
 
 export default function Home() {
 
+  Cookies.remove('token');
+  Cookies.remove('acc');
+
   const router = useRouter()
 
   const formValidations = { resolver: zodResolver(schemaLogin) }
@@ -19,14 +22,15 @@ export default function Home() {
   const { register, handleSubmit, formState: { errors } } = useForm(formValidations);
 
   const request = (context) => {
-    
+
     useSingin(context).then(data => {
 
       if (data.msg == 'OK') {
 
         Cookies.set('token', data.context.token);
+        Cookies.set('acc', data.context.account);
 
-        router.push('/dashboard');
+        router.push('/dashboard/batch');
 
       } else {
 
@@ -47,7 +51,7 @@ export default function Home() {
           <label htmlFor="" className="block text-left m-1">Username</label>
           <input className="w-full p-2 border rounded-md" type="text" {...register('username')} />
           <span className="block text-red-500 text-xs pl-1 min-h-5">
-          {errors.username?.message}
+            {errors.username?.message}
           </span>
         </span>
         <span className="block my-5">
